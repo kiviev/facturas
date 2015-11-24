@@ -1,11 +1,13 @@
-<?php namespace classes\DB
+<?php namespace classes\DB;
+
 /**
  * este requires lo que contiene es varios requires para poder hacer funcionar la clase, en este caso solo las variables que guardan los valores de HOST, USER, PASSWORD, Y DB   por defecto.
  * Lo mejor es guardar este archivo (en mi caso 'config_app.php') guardarlo fuera del alcance de apache, en una ruta por encima del directorio de htdocs para mayor seguridad
  */
 /** con este require se piden las variables donde están los datos de conexion como HOST,USER,PASS y DB
  * */
-require_once('requires.php');
+require_once('config_app.php');
+
 
 /**
 * 
@@ -264,7 +266,7 @@ class Db {
     private function conexion($host,$user,$pass,$db)
 	{
 		//echo $this->host .' host<br>';
-			$conex= new mysqli( $host , $user , $pass ,$db );
+			$conex= new \mysqli( $host , $user , $pass ,$db );
 			if($conex->connect_error){
 			echo "Connection error ($conex->connect_errno) $conex->connect_error \n";
 			exit;
@@ -281,7 +283,7 @@ class Db {
 	{
 		$this->conex->close();
 	}
-		
+
 	
 }
 
