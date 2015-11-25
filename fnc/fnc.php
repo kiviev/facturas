@@ -1,4 +1,4 @@
-<?php namespace fnc;
+<?php //namespace fnc;
 
 
 /**
@@ -52,5 +52,6 @@ function create_table($result, $col_names=array())
         $table.= '</table>';
         return $table;
     }
+
 
  ?>

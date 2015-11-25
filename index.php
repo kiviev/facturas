@@ -1,4 +1,3 @@
-
 <?php
 
 /**
@@ -7,6 +6,7 @@
  * Date: 23/11/15
  * Time: 19:31
  */
+<<<<<<< HEAD
 use classes\DB\Db;
 
 require_once 'requires.php';
@@ -23,33 +23,17 @@ require_once 'requires.php';
     <title>Index</title>
 
     <link href="<?php echo ENV  ?>/css/bootstrap.min.css" rel="stylesheet">
-
-</head>
-<body>
-<div class="row">
-
-    <div class="col-md-3">
+=======
+>>>>>>> 9525337cb4ea0688d1d7a806b2883864dcdd3db0
 
 
+use classes\model\Client;
+use classes\views\View;
 
-<?php
+require_once 'requires.php';
+$client = new Client(22,'B-222222','Alberto Perez','Calle de móstoles','Móstoles','Madrid','28937');
 
-
-$db= new Db();
-$resul= $db->select(array('ID','Name'),'world.city')
-    ->limit(10)
-->exe();
-
-echo \fnc\create_table($resul , array( 'Id' , 'Nombre'));
+View::make('views/app.php',$client);
 
 ?>
-
-    </div>
-</div>
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="<?php echo ENV;  ?>/js/bootstrap.min.js"></script>
-</body>
-</html>
 
