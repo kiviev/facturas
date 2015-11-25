@@ -14,6 +14,7 @@
 	define('DBUSER', 'root');
 	define('DBPASS', 'your_password');
 	define('DB', 'your_table');
-		
+define('NAME_COMPANY', 'Mi Compañía');
+define('TITLE_COMPANY', 'App para la gestión de facturas');
 
  ?>

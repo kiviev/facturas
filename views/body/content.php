@@ -19,8 +19,12 @@
                     <div class="col-xs-12">
 
                         <p>contenido de la sección</p>
-                        <p>Bienvenido <?php echo $client->name ?></p>
-                        <p><?php echo $vars["name"]." variable1=> name disponible"?></p>
+
+                        <?php
+                            echo $_POST['clients'];
+                        ?>
+
+
                     </div>
                 </div>
 

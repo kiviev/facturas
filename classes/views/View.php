@@ -30,9 +30,9 @@ class View {
 
 
 
-    static function make($template , $vars='')
+    static function make($template , $var='')
     {
-        $vars = $vars;
+        $vars = $var;
         require $template;
 
     }
