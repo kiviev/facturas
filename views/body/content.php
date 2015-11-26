@@ -20,12 +20,10 @@ use classes\views\View;
                 <div class="row">
                     <div class="col-xs-12">
 
-                        <p>contenido de la sección</p>
-
                         <?php
-                            //echo $vars['client2']->nombre.'<br>';
-                       // var_dump($vars);
-                        make_v('actions.facturas',$vars);
+                            View::action();
+
+
                         ?>
 
 

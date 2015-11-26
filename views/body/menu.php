@@ -16,7 +16,12 @@
 <!--                <span class="icon-bar"></span>-->
 <!--                <span class="icon-bar"></span>-->
 <!--            </button>-->
-            <a class="navbar-brand" href="<?php echo ENV;?>">Inicio</a>
+            <a class="navbar-brand" href="<?php echo ENV;?>/index.php">Inicio</a>
+            <a class="navbar-brand" href="<?php echo ENV;?>/index.php?action=inicio">Inicio con action</a>
+            <a class="navbar-brand" href="<?php echo ENV;?>?action=facturas">Facturas</a>
+            <a class="navbar-brand" href="<?php echo ENV;?>?action=albaranes">Albaranes</a>
+            <a class="navbar-brand" href="<?php echo ENV;?>?action=clientes">Clientes</a>
+            <a class="navbar-brand" href="<?php echo ENV;?>?action=productos">Productos</a>
         </div>
 
 

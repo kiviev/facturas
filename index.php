@@ -12,7 +12,7 @@ use classes\DB\Db;
 use classes\model\Client;
 use classes\model\Factura;
 use classes\views\View;
-
+session_start();
 require_once 'requires.php';
 
 $client1 = new Client(22,'B-222222','Alberto Perez','Calle de móstoles','Móstoles','Madrid','28937');
@@ -23,18 +23,18 @@ $factura1 = new Factura(33,'2014-10-23',22);
 $factura2 = new Factura(355,'2015-11-12',23);
 $facturas = array($factura1,$factura2);
 
-$vars= array('clients'=>$clients, 'facturas'=>$facturas);
-if(isset($_GET['action'])){
-    switch($_GET['action']){
-        case 'factura':
-            View::make('views/app.php',$vars);
-    }
-}
+//$vars= array('clients'=>$clients, 'facturas'=>$facturas);
+//if(isset($_GET['action'])){
+//    switch($_GET['action']){
+//        case 'factura':
+//            View::make('views/app.php',$vars);
+//    }
+//}
 
 
 //View::make('views/app.php',array('clients'=>$clients));
 
-
+View::app_start();
 
 ?>
 

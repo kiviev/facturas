@@ -40,13 +40,11 @@ function create_table($result, $col_names=array())
                 break;
             }
         }
-
         $table.='</tr>';
         foreach($rows as $row){
             $table.='<tr>';
             foreach($row as $key => $value){
                 $table.= ' <td>'.$value.'</td>';
-
             }
             $table.='</tr>';
         }
@@ -56,10 +54,38 @@ function create_table($result, $col_names=array())
 
 function make_v($view,$vars='')
 {
-
     $rep = 'views/'.str_replace('.','/',$view).'.php';
-
     View::make($rep,$vars);
+}
+
+
+function conf($str)
+{
+
+
+    /**
+     *
+     * hay que mirar esta funcion no funciona  como en el archivo de configuración tenga varios arrays uno dentro de otro
+     *
+     */
+    $divididos= explode('.',$str);
+    $ubicacion=array();
+    $ruta='config';
+    for( $i=0 ;$i< count($divididos); $i++){
+        $ruta.='/'.$divididos[$i];
+        //array_push($ubicacion,$divididos);
+        if(file_exists($ruta.'.php') ){
+            echo 'el archivo: '.$ruta .'.php existe';
+            break;
+        }
+    }
+    echo '  ruta: '.$ruta.'<br>';
+    $action = array_pop($divididos);
+
+    $unidos= implode('.',$divididos);
+    $array= include 'config/'.str_replace('.','/',$unidos).'.php';
+
+        return $array[$action];
 }
 
  ?>

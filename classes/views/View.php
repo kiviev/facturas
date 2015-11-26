@@ -9,31 +9,38 @@
 namespace classes\views;
 
 class View {
-    protected   $vars;
 
-    /**
-     * @return mixed
-     */
-    public function getVars()
+
+    static function app_start()
     {
-        return $this->vars;
+        if(!isset($_GET['action'])){
+            $_GET['action']='inicio';
+            make_v('app');
+        }else{
+
+            make_v('app');
+        }
     }
+    static function action(){
+        if( isset($_GET['action'])){
 
-    /**
-     * @param mixed $vars
-     */
-    public function setVars($vars)
-    {
-        $this->vars = $vars;
+                $action=$_GET['action'];
+            if( in_array($action,conf('options.pages_auth'))){
+
+                make_v('actions.'.$action);
+            }else{
+               make_v('errors.404');
+            }
+
+        }
     }
-
-
-
 
     static function make($template , $var='')
     {
         $vars = $var;
+
         require $template;
 
     }
+
 } 
