@@ -5,6 +5,8 @@
  * Date: 25/11/2015
  * Time: 11:04
  */
+use classes\views\View;
+
 ?>
 <div class="panel-body">
 
@@ -21,7 +23,9 @@
                         <p>contenido de la sección</p>
 
                         <?php
-                            echo $_POST['clients'];
+                            //echo $vars['client2']->nombre.'<br>';
+                       // var_dump($vars);
+                        make_v('actions.facturas',$vars);
                         ?>
 
 

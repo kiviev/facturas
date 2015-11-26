@@ -1,4 +1,5 @@
 <?php //namespace fnc;
+use classes\views\View;
 
 
 /**
@@ -53,5 +54,12 @@ function create_table($result, $col_names=array())
         return $table;
     }
 
+function make_v($view,$vars='')
+{
+
+    $rep = 'views/'.str_replace('.','/',$view).'.php';
+
+    View::make($rep,$vars);
+}
 
  ?>

@@ -9,7 +9,7 @@
 namespace classes\model;
 
 
-class Client {
+class Client extends Model{
     public  $id;
     public  $cif;
     public  $nombre;
